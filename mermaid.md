@@ -95,7 +95,6 @@ public_ip --- border1
 border1 --- fwr
 border1 --- dns
 border1 --- mgc        
-</div>
 ```
 
 
