@@ -14,6 +14,28 @@ author: Pedro Henrique
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Detecta se o script está rodando no navegador
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      // Estamos no navegador (provavelmente no GitHub Pages)
+      const mermaidContainer = document.getElementById("mermaid-container");
+      const markdownContainer = document.getElementById("markdown-container");
+      
+      // Exibe o Mermaid (HTML) e oculta o Markdown
+      if (mermaidContainer && markdownContainer) {
+        mermaidContainer.style.display = "block";
+        markdownContainer.style.display = "none";
+      }
+
+      // Inicializa o Mermaid.js
+      if (typeof mermaid !== "undefined") {
+        mermaid.initialize({ startOnLoad: true });
+      }
+    }
+  });
+</script>
+
 ## 1 Mermaid Example
 
 #### Block Graph
@@ -95,4 +117,32 @@ public_ip --- border1
 border1 --- fwr
 border1 --- dns
 border1 --- mgc        
+</div>
+
+
+
+#### Relationship Flow
+
+<div id="mermaid-container" style="display: none;">
+<div class="mermaid">
+graph TD;
+    A(ClassA) --- |Extends| B(ClassB);
+    C(ClassC) --- |Extends| D(ClassD);
+    E(ClassE) --- |Extends| B;
+    F(ClassF) --- |Extends| D;
+    G(ClassG) --- |Extends| D;
+    B --- |Extends| D;
+</div>
+</div>
+
+<div id="markdown-container">
+```mermaid
+graph TD;
+    A(ClassA) --- |Extends| B(ClassB);
+    C(ClassC) --- |Extends| D(ClassD);
+    E(ClassE) --- |Extends| B;
+    F(ClassF) --- |Extends| D;
+    G(ClassG) --- |Extends| D;
+    B --- |Extends| D;
+```
 </div>
