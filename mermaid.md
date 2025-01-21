@@ -19,7 +19,7 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 #### Block Graph
 
 
-<div class="mermaid">
+```mermaid 
 
 block-beta
       columns 15
@@ -96,7 +96,7 @@ border1 --- fwr
 border1 --- dns
 border1 --- mgc        
 </div>
-
+```
 
 
 #### Relationship Flow
