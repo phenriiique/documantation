@@ -33,82 +33,53 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 }%% -->
 
 ```mermaid 
-
-
-block-beta
-      columns 15
-        space:5
-        ix:5
-        space:5
-
-        block:row2("Internet - 0.0.0.0/0"):15
-            internet1
-            space
-            internet2
-        end
-
-        space:6
-        bdr:3
-        space:6
-
-        space:3
-        ext_transit:8
-        space:4
-
-        bfw1:2
-        space
-        bfw2:2
-        space
-        nftables:5
-        space:4
-
-        space:12
-        lbass_l4:2
-        space
-        public_ip:5
-        space
-        ext_customers:5
-        space
-        ne1_lbaas_rt:2
-        space
-
-        space:12
-        lbass_l7:2
-        space
-
-        border1:5
-        space
-        border2:5
-        space
-        ne1_swift:2
-        space
-        
-        fwr:1
-        space
-        dns
-        space
-        mgc
-        space
-        mgc_pprod:2
-        space
-        mgc_prod:2
-        space
-        berder3:2
-
-
-ix --- bdr
-internet1 --- bdr
-internet2 ---bdr
-bdr --- ext_transit
-ext_transit --- nftables
-ext_transit --- bfw2
-internet1 --- bfw1
-bfw1 --- public_ip
-bfw2 --- public_ip
-public_ip --- border1
-border1 --- fwr
-border1 --- dns
-border1 --- mgc        
+---
+config:
+  layout: fixed
+---
+flowchart TD
+ subgraph s1["Internet - 0.0.0.0/0"]
+        n1["Angola"]
+        n2["Algar"]
+  end
+    n1 --> n3(["BDR"]) & n6["BRFW"]
+    n2 --> n3
+    n4["IX.br"] --> n3
+    n3 --> n5["ext_transit"]
+    n5 --> n8["NFTABLES"] & n7["BRFW"]
+    n6 --> n9["Public_IP"]
+    n7 --> n9
+    n8 --> n9 & n10["ext_customers"]
+    n10 --> n13["Lbaas - L4"] & n12["Lbaas - L7"] & n17["Border"]
+    n13 --> n11["lbaas_tr"]
+    n11 --> n12
+    n12 --> n14["Untitled Node"]
+    n14 --> n15["Untitled Node"]
+    n15 --> n16["Untitled Node"]
+    n17 --> n18["Untitled Node"] & n19["Untitled Node"]
+    n9 --> n25["Border"]
+    n21["DNS"] --> n23["DNS - Recurcivo"]
+    n22["FRW"] --> n24["API"]
+    n25 --> n20["MGC - Workload"] & n21 & n22
+    n18 ~~~ n26["159.168.15.18<br>159.168.15.18<br>159.168.15.18<br>159.168.15.18"]
+    n1@{ shape: rounded}
+    n2@{ shape: rounded}
+    n6@{ shape: rounded}
+    n4@{ shape: rounded}
+    n5@{ shape: rounded}
+    n8@{ shape: rounded}
+    n7@{ shape: rounded}
+    n9@{ shape: rounded}
+    n10@{ shape: rounded}
+    n13@{ shape: rounded}
+    n12@{ shape: rounded}
+    n11@{ shape: rounded}
+    n18@{ shape: rect}
+    n26@{ shape: text}
+    style n1 stroke:#BBDEFB,fill:#BBDEFB
+    style n2 fill:#BBDEFB
+    style n4 fill:#BBDEFB
+    style s1 fill:#C8E6C9
 ```
 
 
@@ -127,14 +98,35 @@ graph TD;
 
 
 ```mermaid
-block-beta
-  columns 3
-  Frontend blockArrowId6<[" "]>(right) Backend
-  space:2 down<[" "]>(down)
-  Disk left<[" "]>(left) Database[("Database")]
-
-  classDef front fill:#696,stroke:#333;
-  classDef back fill:#969,stroke:#333;
-  class Frontend front
-  class Backend,Database back
+---
+config:
+  layout: fixed
+---
+flowchart TD
+ subgraph s1["Internet - 0.0.0.0/0"]
+        n1["Angola"]
+        n2["Algar"]
+  end
+    n1 --> n3(["BDR"]) & n6["BRFW"]
+    n2 --> n3
+    n4["IX.br"] --> n3
+    n3 --> n5["ext_transit"]
+    n5 --> n8["NFTABLES"] & n7["BRFW"]
+    n6 --> n9["Public_IP"]
+    n7 --> n9
+    n8 --> n9
+    n8 --> n10["ext_customers"]
+    n1@{ shape: rounded}
+    n2@{ shape: rounded}
+    n6@{ shape: rounded}
+    n4@{ shape: rounded}
+    n5@{ shape: rounded}
+    n8@{ shape: rounded}
+    n7@{ shape: rounded}
+    n9@{ shape: rounded}
+    n10@{ shape: rounded}
+    style n1 stroke:#BBDEFB,fill:#BBDEFB
+    style n2 fill:#BBDEFB
+    style n4 fill:#BBDEFB
+    style s1 fill:#C8E6C9
 ```
