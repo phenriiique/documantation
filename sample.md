@@ -108,10 +108,8 @@ graph TD;
     F(ClassF) --- |Extends| D;
     G(ClassG) --- |Extends| D;
     B --- |Extends| D;
-
-
-
-## 4 - Load Process
+```
+### 4 - Load Process
 
 Ut tincidunt metus ac lacus lobortis tempor. In placerat eget magna at eleifend. Pellentesque vehicula quis ipsum at at:
 
