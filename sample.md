@@ -100,7 +100,7 @@ Pellentesque vitae lacus at est feugiat elementum sed eget mauris. Vestibulum an
 
 #### Relationship Flow
 
-<div class="mermaid">
+```mermaid
 graph TD;
     A(ClassA) --- |Extends| B(ClassB);
     C(ClassC) --- |Extends| D(ClassD);
@@ -108,7 +108,7 @@ graph TD;
     F(ClassF) --- |Extends| D;
     G(ClassG) --- |Extends| D;
     B --- |Extends| D;
-</div>
+
 
 
 ## 4 - Load Process
