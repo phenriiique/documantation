@@ -13,6 +13,13 @@ author: Pedro Henrique
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof mermaid !== "undefined") {
+        mermaid.initialize({ startOnLoad: true });
+      }
+    });
+  </script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
