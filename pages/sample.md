@@ -1,7 +1,7 @@
 ---
 layout: default
-title: UpstreamDummyApp
-nav_order: 2
+title: Sample
+nav_order: 10
 author: Lucas Lopes (lcskf@protonmail.com)
 ---
 

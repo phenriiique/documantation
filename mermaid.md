@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mermaid Examples
+title: Graph
 nav_order: 3
 author: Pedro Henrique
 ---
@@ -14,7 +14,7 @@ author: Pedro Henrique
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 </script>
 
-## 1 Mermaid Example
+## 1 Graph Example
 
 #### Block Graph
 
