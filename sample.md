@@ -5,9 +5,14 @@ nav_order: 2
 author: Lucas Lopes (lcskf@protonmail.com)
 ---
 
-<!--- Begin: importing scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.2/mermaid.min.js" integrity="sha512-x8NWYlEsC86ngfO24tbxW6pMuyn9gYnwEW0FcSobohDc3iLCXhmRkqYXgTfE7Jwy2YCTnHRfyum8LUIiyvmgWQ==" crossorigin="anonymous"></script>
+<!-- - Begin: importing scripts -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.2/mermaid.min.js" integrity="sha512-x8NWYlEsC86ngfO24tbxW6pMuyn9gYnwEW0FcSobohDc3iLCXhmRkqYXgTfE7Jwy2YCTnHRfyum8LUIiyvmgWQ==" crossorigin="anonymous"></script> -->
 <!--- End: importing scripts -->
+
+<!-- IMPORT LAST VERSION https://www.jsdelivr.com/package/npm/mermaid -->
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
+</script>
 
 
 ## 1 - Brief Description of Feed Business Purpose
@@ -97,12 +102,12 @@ Pellentesque vitae lacus at est feugiat elementum sed eget mauris. Vestibulum an
 
 <div class="mermaid">
 graph TD;
-    A(ClassA) -->|Extends| B(ClassB);
-    C(ClassC) --> |Extends| D(ClassD);
-    E(ClassE) --> |Extends| B;
-    F(ClassF) --> |Extends| D;
-    G(ClassG) --> |Extends| D;
-    B --> |Extends| D;
+    A(ClassA) --- |Extends| B(ClassB);
+    C(ClassC) --- |Extends| D(ClassD);
+    E(ClassE) --- |Extends| B;
+    F(ClassF) --- |Extends| D;
+    G(ClassG) --- |Extends| D;
+    B --- |Extends| D;
 </div>
 
 

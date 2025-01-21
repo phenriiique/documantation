@@ -7,5 +7,3 @@ nav_order: 1
 # Welcome
 
 :)
-
-Bye!
