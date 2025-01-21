@@ -18,8 +18,22 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/+esm'
 
 #### Block Graph
 
+<!-- %%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%% -->
 
 ```mermaid 
+
 
 block-beta
       columns 15
@@ -108,4 +122,19 @@ graph TD;
     F(ClassF) --- |Extends| D;
     G(ClassG) --- |Extends| D;
     B --- |Extends| D;
+```
+
+
+
+```mermaid
+block-beta
+  columns 3
+  Frontend blockArrowId6<[" "]>(right) Backend
+  space:2 down<[" "]>(down)
+  Disk left<[" "]>(left) Database[("Database")]
+
+  classDef front fill:#696,stroke:#333;
+  classDef back fill:#969,stroke:#333;
+  class Frontend front
+  class Backend,Database back
 ```
